@@ -1,0 +1,15 @@
+node{
+    stage('clone'){
+        git ''
+        
+    }
+    stage("Ansible"){
+        ansiblePlaybook(
+            colorized: true,
+            become: true,
+            playbook: 'playbook.yaml',
+            inventory: 'hosts.yaml'
+        )
+
+    }
+}
