@@ -1,9 +1,13 @@
 ---
   - hosts: servers
     become: true
-    
+
     tasks:
       - name: update servers
         yum:
           name: "*"
           state: latest
+
+      - name: Reboot when packages were updated
+        reboot:
+        when: yum_update_status.changed
