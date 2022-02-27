@@ -1,6 +1,7 @@
 ---
   - hosts: servers
     become: true
+    
     tasks:
       - name: update servers
         yum:
