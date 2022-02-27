@@ -1,4 +1,0 @@
-all:
-  servers:
-    hosts:
-      192.168.33.151
